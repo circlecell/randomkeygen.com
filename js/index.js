@@ -63,12 +63,12 @@ function blinkCopied(node) {
     const { offsetHeight, offsetWidth } = node;
     const blinkNode = $.one('.blink-copied');
 
-    blinkNode.style.top = `${top + offsetHeight}px`
-    blinkNode.style.left = `${left + offsetWidth/2 - 40}px`;
+    blinkNode.style.top = `${top + offsetHeight}px`;
+    blinkNode.style.left = `${left + offsetWidth / 2 - 40}px`;
 
     blinkNode.classList.add('active');
 
-    setTimeout(() => blinkNode.classList.remove('active'), 100)
+    setTimeout(() => blinkNode.classList.remove('active'), 100);
 }
 
 for (const node of $('input[data-strength]')) {

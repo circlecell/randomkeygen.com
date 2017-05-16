@@ -58,6 +58,24 @@ function getKey(strength) {
     }
 }
 
+function blinkCopied(node) {
+    const { top, left } = node.getBoundingClientRect();
+    const { offsetHeight, offsetWidth } = node;
+    const blinkNode = $.one('.blink-copied');
+
+    blinkNode.style.top = `${top + offsetHeight}px`
+    blinkNode.style.left = `${left + offsetWidth/2 - 40}px`;
+
+    blinkNode.classList.add('active');
+
+    setTimeout(() => blinkNode.classList.remove('active'), 100)
+}
+
 for (const node of $('input[data-strength]')) {
     node.value = getKey(node.dataset.strength);
+    node.addEventListener('focus', () => {
+        node.select();
+        document.execCommand('copy');
+        blinkCopied(node);
+    });
 }

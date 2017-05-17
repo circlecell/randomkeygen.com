@@ -61,10 +61,11 @@ function getKey(strength) {
 function blinkCopied(node) {
     const { top, left } = node.getBoundingClientRect();
     const { offsetHeight, offsetWidth } = node;
+    const { scrollX, scrollY } = window;
     const blinkNode = $.one('.blink-copied');
 
-    blinkNode.style.top = `${top + offsetHeight}px`;
-    blinkNode.style.left = `${left + offsetWidth / 2 - 40}px`;
+    blinkNode.style.top = `${top + offsetHeight + scrollY}px`;
+    blinkNode.style.left = `${left + offsetWidth / 2 - 40 + scrollX}px`;
 
     blinkNode.classList.add('active');
 

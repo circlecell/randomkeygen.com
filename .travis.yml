@@ -18,5 +18,6 @@ deploy:
   on:
     branch: master
 before_install:
+- npm install -g npm5
 - openssl aes-256-cbc -K $encrypted_734655b03b72_key -iv $encrypted_734655b03b72_iv
   -in deploy_rsa.enc -out deploy_rsa -d

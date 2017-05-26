@@ -3,6 +3,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SplitByPathPlugin = require('webpack-split-by-path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 const { argv } = require('optimist');
 
@@ -51,6 +52,10 @@ if (NODE_ENV === 'development') {
         url: `http://localhost:${port}`,
         ignoreErrors: true
     }));
+}
+
+if (NODE_ENV === 'production') {
+    plugins.push(new UglifyJSPlugin());
 }
 
 let filename;

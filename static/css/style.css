@@ -159,11 +159,6 @@ li code {}
     text-align: right;
 }
 
-.toggle,
-[id^=drop] {
-    display: none;
-}
-
 header {
     width: 100%;
     background-color: #fff;
@@ -218,6 +213,11 @@ nav:after {
     clear: both;
 }
 
+.toggle,
+[id^=drop] {
+    display: none;
+}
+
 nav ul {
     float: right;
     margin: 0;
@@ -260,12 +260,13 @@ nav ul li:hover>ul {
 }
 
 nav ul ul li {
-    width: 320px;
+    width: 240px;
     float: none;
     display: list-item;
     position: relative;
     border-bottom: 1px solid #f0f0f0;
     padding: 7px 0;
+    line-height: 20px;
 }
 
 nav ul ul li.jscompress {
@@ -284,7 +285,11 @@ nav ul ul li.dns {
     border-left: 5px solid #26A65B;
 }
 
-nav ul ul li.Keygen {
+nav ul ul li.comp {
+    border-left: 5px solid #3498DB;
+}
+
+nav ul ul li.keygen {
     border-left: 5px solid #EB9532;
 }
 
@@ -292,6 +297,10 @@ nav ul ul ul li {
     position: relative;
     top: -60px;
     left: 300px;
+}
+
+.tagline-title {
+    font-size: 11px
 }
 
 li>a:only-child:after {
@@ -302,8 +311,8 @@ li>a:only-child:after {
     position: relative;
     display: inline-block;
     width: 0.8em;
-    height: 0.65em;
-    margin: 9px 10px 0 0;
+    height: 0.8em;
+    margin: 7px 10px 0 0;
     border-top: 0.1em solid #333;
     border-bottom: 0.1em solid #333;
 }
@@ -311,7 +320,7 @@ li>a:only-child:after {
 .three-lines:before {
     content: "";
     position: absolute;
-    top: 0.25em;
+    top: 0.3em;
     left: 0;
     width: 100%;
     border-top: 0.1em solid #333;
@@ -483,21 +492,18 @@ footer {
     .refresh {
         padding: 35px 10px 10px;
     }
-	.sub-title{display:none}
-}
+	}
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 650px) {
     .key_section input{font-size:12px}
     .key_section .input-wrap-33 input,
     .key_section .input-wrap-50 input,
     .key_section .input-wrap-100 input {
         width: 94%;
     }
+	.sub-title{display:none}
     .more-dev {
         display: none;
-    }
-    .three-lines {
-        margin: 9px 0 0 0
     }
     h2 {
         font-size: 16px;
@@ -508,15 +514,9 @@ footer {
     p {
         font-size: 13px
     }
-}
-
-@media all and (max-width: 550px) {
-    .tagline-title {
-        display: none
-    }
-    nav ul ul li {
-        width: 180px
-    }
+	.three-lines {
+	margin:7px 5px 0 0
+	}
 }
 
 .blink-copied {

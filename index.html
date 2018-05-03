@@ -21,6 +21,29 @@
     <link href="icon-hires.png" rel="icon" sizes="192x192">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+    window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#edeff5",
+          "text": "#444444"
+        },
+        "button": {
+          "background": "#EB9532",
+          "text": "#ffffff"
+        }
+      },
+      "content": {
+        "message": "By using RandomKeygen.com you accept our use of cookies and agree to our",
+    	"dismiss": "Ok, thanks!",
+        "link": "privacy policy.",
+        "href": "https://randomkeygen.com/privacy-policy.html"
+      }
+    })});
+    </script>
 </head>
 <body>
     <header>
@@ -206,10 +229,14 @@
             </div>
             -->
         </div>
-        <footer>© 2018 RandomKeygen.com</footer>
+        <footer>
+          © 2018 RandomKeygen.com
+          &mdash;
+          <a href="privacy-policy.html" target="_blank">Privacy</a>
+        </footer>
     </div>
 
     <span class="blink-copied">Copied</span>
-    
+
 </body>
 </html>

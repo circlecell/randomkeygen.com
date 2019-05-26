@@ -2,7 +2,6 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const SplitByPathPlugin = require('webpack-split-by-path');
 const BabiliPlugin = require('babili-webpack-plugin');
 const path = require('path');
 const { argv } = require('optimist');
@@ -23,10 +22,6 @@ const plugins = [
             return order.indexOf(nameA) - order.indexOf(nameB);
         }
     }),
-    new SplitByPathPlugin([{
-        name: 'vendor',
-        path: path.join(__dirname, 'node_modules/'),
-    }]),
     function saveChunksPlugin() {
         this.plugin('emit', (compilation, callback) => {
             const chunks = [];

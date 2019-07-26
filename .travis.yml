@@ -3,7 +3,7 @@ branches:
   only:
   - master
 node_js:
-- '7'
+- '12'
 addons:
   ssh_known_hosts: 192.241.157.86
 before_deploy:

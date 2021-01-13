@@ -40,7 +40,6 @@ function keyGen(
   return key;
 }
 
-
 function getKey(strength) {
   switch (strength) {
   case 'decent_pw':

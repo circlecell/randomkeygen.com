@@ -1,8 +1,6 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 const { argv } = require('optimist');
 
@@ -22,7 +20,7 @@ const plugins = [
       return order.indexOf(nameA) - order.indexOf(nameB);
     }
   }),
-  function saveChunksPlugin() {
+  /* function saveChunksPlugin() {
     this.plugin('emit', (compilation, callback) => {
       const chunks = [];
       for (const { files: [jsName] } of compilation.chunks) {
@@ -36,17 +34,13 @@ const plugins = [
       };
       callback();
     });
-  }
+  } */
 ];
 
 if (NODE_ENV === 'development') {
   const { port } = argv;
 
   entry.app.push(`webpack-dev-server/client?http://localhost:${port}`);
-  plugins.push(new OpenBrowserPlugin({
-    url: `http://localhost:${port}`,
-    ignoreErrors: true
-  }));
 }
 
 let filename;
@@ -65,9 +59,11 @@ entry.app.push(
   './js/index'
 );
 
-plugins.push(new CopyWebpackPlugin([
-  { from: 'static', to: '.' },
-]));
+plugins.push(new CopyWebpackPlugin({
+  patterns: [
+    { from: 'static', to: '.' },
+  ]
+}));
 
 module.exports = {
   entry,
@@ -89,6 +85,9 @@ module.exports = {
   },
   devtool: 'source-map',
   optimization: {
-    minimizer: [new UglifyJsPlugin()],
+    minimize: true
   },
+  devServer: {
+    open: true
+  }
 };

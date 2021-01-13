@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run lint",
     "build": "npm run clean && NODE_ENV=production webpack --mode=production",
-    "dev": "NODE_ENV=development webpack-dev-server --port 8107",
+    "dev": "NODE_ENV=development webpack serve --port 8107",
     "clean": "rimraf dist",
     "upgrade": "ncu -u && npm install",
     "lint": "eslint . --ext .js --ignore-pattern '**/node_modules/**' --ignore-pattern '**/dist/**'",
@@ -28,31 +28,29 @@
   },
   "homepage": "https://github.com/circlecell/jsonlintdotcom#readme",
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
-    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
-    "@babel/preset-env": "^7.9.6",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "@babel/preset-env": "^7.12.11",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.2",
     "babel-polyfill": "^6.26.0",
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^3.5.3",
-    "eslint": "^7.0.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "html-webpack-plugin": "^4.3.0",
-    "npm-check-updates": "^5.0.0",
-    "open-browser-webpack-plugin": "0.0.5",
+    "copy-webpack-plugin": "^7.0.0",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "html-webpack-plugin": "^4.5.1",
+    "npm-check-updates": "^10.2.5",
     "optimist": "^0.6.1",
     "rimraf": "^3.0.2",
     "script-loader": "^0.7.2",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "webpack": "^5.13.0",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
   },
   "dependencies": {
-    "balajs": "^1.0.7"
+    "balajs": "^1.0.10"
   }
 }
